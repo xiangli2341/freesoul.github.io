@@ -70,6 +70,8 @@
 
     <link rel="preload" href= /css/style.css?v=20180501 as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <link rel="stylesheet" href= /css/mobile.css?v=20180501 media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
         
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
@@ -191,12 +193,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >Free soul&#39;s Studio.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name"></a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>Free soul's Studio.</a>
 </header>
@@ -210,24 +223,61 @@
 
 
 
+height:50vh;
+
 >
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            [Untitled Post]
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <!-- 文章页标签  -->
+            
+            <div class="post-intro-meta">
+                <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                <span class="post-intro-time">2018/06/12</span>
+                
+                <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                    <span class="iconfont-archer">&#xe602;</span>
+                    <span id="busuanzi_value_page_pv"></span>
+                </span>
+                
+                <span class="shareWrapper">
+                    <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                    <span class="shareText">Share</span>
+                    <ul class="shareList">
+                        <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                            <div class="share-qrcode"></div>
+                        </li>
+                        <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                        <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                        <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                        <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                    </ul>
+                </span>
+            </div>
         
     </div>
 </div>
@@ -331,45 +381,81 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/05/22/maven搭建web-app/" >
-                
-                    <span>使用IntelliJ IDEA  简单的配置Maven</span>
-            </a>
-            <div class="abstract-content">
-                一，打开settingsALT+Shift+s打开IDEA的Settings或者 打开-File-Settings
-二，新建maven WEB项目打开-File-New-Project点击NEXT
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>–创建表空间–create tablespace LOUISdatafile’f:\Louis.dbf’size 80Mautoextend on next 20M maxsize 200M;</p>
+<p>–创建用户–create user louisidentified by tigerdefault tablespace LOUIS;</p>
+<p>–授权–grant dba to louis;————————————<br>create table emp(<br>    eid number(20)primary key,–员工主键id<br>    ename varchar(20),–姓名<br>    esal number(20),–工资<br>    esex varchar(20),–性别<br>    did number(20),–部门编号<br>    eage number(20)–年龄<br>)</p>
+<p>create table dept(<br>     did number(20)primary key,–部门主键id<br>     dname varchar2(20)–部门名<br>)<br>alter table emp add constraint a foreign key (did) references dept(did);</p>
+<p>–添加dept元素–<br>insert into dept values(1,’deparment’);<br>insert into dept values(2,’administra’);</p>
+<p>–添加EMP元素–<br>insert into emp values(1,’A’,1818,’man’,1,25);<br>insert into emp (eid,ename,esal,eage)values(2,’B’,2484,17);<br>insert into emp (eid,ename,esex,esal,eage)values(3,’C’,’woman’,2236,30);<br>insert into emp values(4,’D’,2500,’man’,1,14);<br>insert into emp values(5,’E’,2500,’man’,2,18);<br>insert into emp values(6,’F’,1622,’man’,1,27);<br>insert into emp (eid,ename,esal,eage)values(7,’G’,3565,19);<br>insert into emp (eid,ename,esex,esal,eage)values(8,’H’,’woman’,5501,36);<br>insert into emp values(9,’I’,3622,’man’,1,17);<br>insert into emp values(10,’J’,852,’man’,2,20);</p>
+<p>—基础SQL语句—</p>
+<p>select * from emp e;</p>
+<p>–新增<br>insert into emp values(11,’K’,892,’man’,2,15);</p>
+<p>–新增(insert into 表名 （字段1，字段2，字段3，字段4）values(内容……))<br>insert into emp (eid,ename,esal,esex) values (12,’L’,3213,’man’);</p>
+<p>–删除(delete from 表名 where 条件)–<br>delete from emp where eid = 8;—</p>
+<p>修改（update 表名 set 需要修改的字段名 = 新赋值的内容 where 条件）<br>-update emp set ename = ‘Z’ where eid = 1;</p>
+<p>–查看(查看全部和某一个)–<br>select * from emp e where e.eid=7; </p>
+<p>–数据库中常用的函数—-<br>1聚合函数—-求EMP表中所有员工的工资总和<br>select sum(e.esal) from emp e;</p>
+<p>–求EMP表中具有多少对象（成员）<br>select count(*) from emp;<br>–求EMP表中所有员工的工资平均数<br>select avg(esal) from emp;<br>–求EMP表中工资的最大值和最小值<br>select max(esal) from emp;select min(esal) from emp;</p>
+<p>–2模糊查询—-查询姓名为A???的所有员工–<br>select ename from emp where (ename like ‘A%’);<br>–查询姓名为???A的所有员工–<br>select ename from emp where (ename like ‘%A’);</p>
+<p>–查询姓名为???A???的所有员工–<br>select ename from emp where (ename like ‘%A%’);<br>–单行函数–查询O在HELLO中的位置(它将从该单词首字母进行查询，且首字母下标为1)<br>select  instr(‘HELLO’,’E’)from dual;<br>–截取(截取从第2位到第2+5位。且包含2不包含2+5)<br>select substr(‘Helloword’,2,5)from dual;<br>–省略小数点（保留小数点后3位,视第四位情况而四舍五入）<br>select round(3.14159,3)from dual;–获取当前时间select sysdate from dual;</p>
+<p>–3分组查询以及过滤–根据部门来计算（且部门平均工资大于2000）这些几个部门的工资和–<br>select sum (e.esal)from emp e group by e.did having avg(e.esal)&gt;2000;<br>–组合查询–<br>–内连接–<br>select e.ename, d.dname   from emp e ,dept d where e.eid=1 and e.did=d.did;<br>–左连接–<br>select  e.ename,d.dnamefrom  dept dleft join  emp e on d.did=e.did where e.eid=1;<br>–自然连接–<br>select e.ename,d.dname  from emp e natural join dept d where e.eid=1;</p>
+<p>—子查询–<br>select <em>from  emp e,dept d where e.esal=(select max(e.esal) from emp) and e.did=d.did;<br>–分页查询(其中4</em>2表示当前页<em>每页记录数)；(4-1)</em>2表示(当前-1)<em>每页记录数）–<br>select </em>from (select e.<em>,rownum r from emp ewhere  rownum&lt;=(4</em>2))where r &gt;(4-1)*2;</p>
+<p>—PLSqL语句的练习—-1.步骤声明 delclare ;2.执行 begin;3.end 结束;4.Exception 异常处理(可省略)<br>—-demo1——————–<br>declare  –声明   msg char(15); –定义变量<br>sal number(7,2);–数字类型<br>begin –开始<br>msg:=’HelloWorld’;–赋值<br>dbms_output.put_line(msg);  –输出<br>end;  –结束<br>—-demo2——————–<br>declare  –声明<br>emprows emp%Rowtype;  –定义变量<br>begin    –开始<br>select e.<em> into emprows –赋值<br>from emp e<br>where e.eid=1;<br>dbms_output.put_line(emprows.ename);<br>end;<br>—-demo3————- ——-<br>declare – 声明<br>a number; –定义变量<br>b number;<br>begin<br>a:=30;<br>b:=30;<br>if(a&gt;b) then<br>dbms_output.put_line(‘YES’);<br>else<br>dbms_output.put_line(‘NO’);<br>end if;<br>end;<br>—-demo4(综合例题)——————–<br>declare<br>ename emp.ename%type;<br>lname dept.dname%type;<br>nn number;<br>begin<br>select count(</em>) into nn<br>from emp e<br>where  e.eid=1;<br>if nn&gt;0 then<br>    select e.ename into ename<br>from emp e<br>where e.eid=1;<br>    select d.dname into lname<br>from  dept d ,emp e<br>where d.did=e.did and e.eid=1;<br>dbms_output.put_line(‘ename:’||ename);<br>dbms_output.put_line(‘dname:’||lname);<br>    else<br>dbms_output.put_line(‘no people！’);<br>end if;<br>end;<br>—-demo4(显示游标)————- ——-<br>declare<br>cursor YB is select *from emp ;<br>newemp emp%rowtype;<br>begin open YB;<br>loop<br>fetch<br>YB into newemp;<br>dbms_output.put_line(‘ename:’||newemp.ename);<br>dbms_output.put_line(‘esql’||newemp.esal);<br>dbms_output.put_line(‘<del>~</del><del>~</del><del>~</del><del>~</del>‘);<br>exit when YB%notfound;<br>end loop;<br>close YB;<br>end;<br>–提交<br>commit;        </p>
 
-点击NEXT 
-
-添加的配置为archetypeCatalog ,属性为internal点击OK点击NEXT点击Finish后项目开始创建loading…..等待创建
-三，maven web模板项目结构
-四，配置Tomcat开始运行偷个懒，2333333
-End版权声明：本文为博主原创文章，转载请注明出处。Xangli2341进行重新整理编辑，如有侵权请致邮至我的邮箱
-123搭这个的初衷就是...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/22</span>
-                </div>
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
+    </article>
+    <!-- license  -->
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "IDEA">IDEA</a>
-    
-</div>
-                
-            </div>
-        </article>
+        <div class="license-wrapper">
+            <p>原文作者: <a href="https://xiangli2341.github.io">Lie</a>
+            <p>原文链接: <a href="https://xiangli2341.github.io/2018/06/12/Oracle数据库操作语句/">https://xiangli2341.github.io/2018/06/12/Oracle数据库操作语句/</a>
+            <p>发表日期: <a href="https://xiangli2341.github.io/2018/06/12/Oracle数据库操作语句/">June 12th 2018, 11:20:01</a>
+            <p>版权声明: 本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2018/06/12/Oracle创建表、约束、视图、索引、序列、同义词、表空间/" title= Oracle笔记:创建表、约束、视图、索引、序列、同义词、表空间 >
+                    <div class="prevTitle">Oracle笔记:创建表、约束、视图、索引、序列、同义词、表空间</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+<div id="container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: '35413183', // 可选。默认为 location.href
+  owner: 'xiangli2341',
+  repo: 'xiangli2341.github.io',
+  oauth: {
+    client_id: '1cec5dc69573613ab3d2',
+    client_secret: '35f9593f11259df5453210b2100fad35f5a94d64',
+  },
+})
+gitment.render('container')
+</script>
+    <!--PC版-->
+
+    <!--PC版-->
+
+
+    
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -444,6 +530,24 @@ End版权声明：本文为博主原创文章，转载请注明出处。Xangli23
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -641,6 +745,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
     
     </body>
 </html>
