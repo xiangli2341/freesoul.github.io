@@ -390,7 +390,7 @@ height:50vh;
             <main class="main post-page">
     <article class="article-entry">
         <p>设计一个有getMin()的栈 在实现栈的基本功能的基础上，再实现返回栈中最小元素的操作</p>
-<p><img src="http://chuantu.biz/t6/339/1530953692x-1376440162.bmp" alt="">    </p>
+<p><img src="http://chuantu.biz/t6/339/1530957909x-1404817808.bmp" alt="">    </p>
 <p>规则<br><img src="http://chuantu.biz/t6/339/1530956614x1822611263.bmp" alt=""></p>
 <h1 id="创建两个栈空间并进行实例化"><a href="#创建两个栈空间并进行实例化" class="headerlink" title="创建两个栈空间并进行实例化"></a>创建两个栈空间并进行实例化</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 这个stackData用来保存当前栈中的元素数据 功能与一个正常的栈没有区别</span><br><span class="line"> */</span><br><span class="line">private Stack&lt;Integer&gt; stackData;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 这个stackMin用来保存每一步的最小元素数据</span><br><span class="line"> */</span><br><span class="line">private Stack&lt;Integer&gt; stackMin;</span><br><span class="line"></span><br><span class="line">// 实例化变量</span><br><span class="line">public MyStack() &#123;</span><br><span class="line">	this.stackData = new Stack&lt;Integer&gt;();</span><br><span class="line">	this.stackMin = new Stack&lt;Integer&gt;();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="push-方法"><a href="#push-方法" class="headerlink" title="push() 方法"></a>push() 方法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">/***</span><br><span class="line"> *	Tips：</span><br><span class="line"> *	 _____</span><br><span class="line"> *  |_|_|_|push方法向栈中添加元素,返回结果是当前添加的元素 </span><br><span class="line"> *  |_|_|_|push和add都是向栈中添加元素,底层实现也是一样的,都是先将Vector扩容,再添加</span><br><span class="line"> * @param 当前数据为newNum</span><br><span class="line"> */</span><br><span class="line">public void push(int newNum) &#123;</span><br><span class="line">	//是否为空</span><br><span class="line">	if (this.stackMin.isEmpty()) &#123;</span><br><span class="line">		//对象为空将其压入stackMin中</span><br><span class="line">		this.stackMin.push(newNum);</span><br><span class="line">	//对象不为空时，进行判断比较</span><br><span class="line">	&#125; else if (newNum &lt;= this.getmin()) &#123;</span><br><span class="line">		//压入stackMin中</span><br><span class="line">		this.stackMin.push(newNum);</span><br><span class="line">	&#125;</span><br><span class="line">	//将其压入当前栈stackData中</span><br><span class="line">	this.stackData.push(newNum);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -643,6 +643,10 @@ top:50vh;
     
     
     
+    
+    
+    
+    
     <div class="total-archive"> Total : 7 </div>
     
     <div class="post-archive">
@@ -675,12 +679,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/maven搭建web-app/" >使用IntelliJ IDEA  简单的配置Maven</a>
+            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/hello-world/" >Hello World</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/hello-world/" >Hello World</a>
+            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/maven搭建web-app/" >使用IntelliJ IDEA  简单的配置Maven</a>
         </li>
     
     
@@ -695,6 +699,8 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Oracle"><span class="iconfont-archer">&#xe606;</span>Oracle</span>
     
+        <span class="sidebar-tag-name" data-tags="IDEA"><span class="iconfont-archer">&#xe606;</span>IDEA</span>
+    
         <span class="sidebar-tag-name" data-tags="Java"><span class="iconfont-archer">&#xe606;</span>Java</span>
     
         <span class="sidebar-tag-name" data-tags="Spring"><span class="iconfont-archer">&#xe606;</span>Spring</span>
@@ -702,8 +708,6 @@ top:50vh;
         <span class="sidebar-tag-name" data-tags="SpringMVC"><span class="iconfont-archer">&#xe606;</span>SpringMVC</span>
     
         <span class="sidebar-tag-name" data-tags="Mybatis"><span class="iconfont-archer">&#xe606;</span>Mybatis</span>
-    
-        <span class="sidebar-tag-name" data-tags="IDEA"><span class="iconfont-archer">&#xe606;</span>IDEA</span>
     
         <span class="sidebar-tag-name" data-tags="Stack堆和队列"><span class="iconfont-archer">&#xe606;</span>Stack堆和队列</span>
     
@@ -742,9 +746,9 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="SQL"><span class="iconfont-archer">&#xe60a;</span>SQL</span>
     
-        <span class="sidebar-category-name" data-categories="SSM"><span class="iconfont-archer">&#xe60a;</span>SSM</span>
-    
         <span class="sidebar-category-name" data-categories="Maven"><span class="iconfont-archer">&#xe60a;</span>Maven</span>
+    
+        <span class="sidebar-category-name" data-categories="SSM"><span class="iconfont-archer">&#xe60a;</span>SSM</span>
     
         <span class="sidebar-category-name" data-categories="算法与数据结构"><span class="iconfont-archer">&#xe60a;</span>算法与数据结构</span>
     
